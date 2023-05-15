@@ -1,0 +1,14 @@
+package ticketing;
+
+import java.util.Scanner;
+
+public class ticketing {
+
+	public void ticketing() {
+		
+		Scanner input = new Scanner(System.in);
+		String movie = input.next();
+		
+	}
+	
+}

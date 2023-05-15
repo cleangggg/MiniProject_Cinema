@@ -1,0 +1,75 @@
+package ticketing;
+
+	import java.sql.Connection;
+	import java.sql.PreparedStatement;
+	import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+import DBConnection.DBConnection;
+
+	public class tk_service {
+
+		Connection con;
+		PreparedStatement ps;
+		ResultSet rs;
+		HashMap<String, ArrayList> map = new HashMap<>();
+		public tk_service() {
+
+			try {
+				con = DBConnection.getConnection();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		public ticketing_entity ticketing (String movie) {
+
+			String sql = "select MOVIE_NAME, MOVIE_TIME, MOVIE_SEATCOUNT from movie where movie_name = ?";
+			try {
+
+				ticketing_entity te = new ticketing_entity();
+				Scanner input = new Scanner(System.in); 
+				ps = con.prepareStatement(sql);
+				ps.setString(1, movie);
+				rs = ps.executeQuery();
+
+				
+				while (rs.next()) {
+					if (rs.getString(1).equals(movie)){
+					ArrayList arr = new ArrayList<>();
+					arr.add(rs.getString(1));	
+					arr.add(rs.getString(2));	
+					arr.add(rs.getString(3));	
+					map.put(movie,arr);
+					System.out.println(map);
+					}
+				}
+
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+	public void reduce_count(String movie ,String time) {
+		
+		String sql = "update movie SET movie_seatcount = movie_seatcount - 1 where movie_name= ? and movie_time = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, movie);
+			ps.setString(2, time);
+			ps.executeUpdate();
+			System.out.println("업데이트완료");
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+}

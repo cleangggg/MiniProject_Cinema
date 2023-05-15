@@ -1,0 +1,23 @@
+package member;
+
+import java.util.Scanner;
+
+public class account_service {
+
+public void Sign_IN() { //회원가입
+	
+	Scanner input = new Scanner(System.in);
+	
+}
+
+public void login() {//로그인
+	
+	
+}
+	
+public void modify() {//멤버수정 
+	
+	
+}
+
+}
