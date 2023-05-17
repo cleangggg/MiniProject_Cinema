@@ -140,41 +140,73 @@ public static void main(String[] args) {
 			System.out.println("1. 비밀번호 수정");
 			System.out.println("2. 전화번호 수정");
 			System.out.println("3. 닉네임 수정");
-			System.out.println("4. 나가기");
+			//System.out.println("4. 나가기");
 			System.out.print(">>> ");
 			num = input.nextInt();
-			String member;
+			
 			switch(num) {
 			case 1: 
 				System.out.print("아이디 입력: ");
 				id = input.next();
-				System.out.print("현재 비밀번호 입력: ");
-				member = input.next();
-				System.out.println(m1.getMember_pwd());
-				db.change(id,member);
+				db.search_pwd(id);
+
 				
-				MemberDTO d3 = db.change(id,member);
+				MemberDTO d3 = db.search_pwd(id);
 				
 				if(d3 == null) {
 					System.out.println("존재하지 않는 회원입니다");
 				}else {
-					System.out.println("새로운 비밀번호 입력: ");
+					System.out.println("pwd: "+d3.getMember_pwd());
+					System.out.print("새로운 비밀번호 입력: ");
 					pwd = input.next();
-					m1.setMember_pwd(pwd);
-					System.out.println(m1.getMember_pwd());
+					
+					d3.setMember_id(id); d3.setMember_pwd(pwd);
+					
+					System.out.println("pwd: "+d3.getMember_pwd());
 				}
-				
-				System.out.println(m1.getMember_pwd());
 				
 				
 				break;
 			case 2: 
-				System.out.print("아이디 입력: ");
-				id = input.next();
+//				System.out.print("아이디 입력: ");
+//				id = input.next();
+//				db.search_pwd(id);
+//
+//				
+//				MemberDTO d4 = db.search_pwd(id);
+//				
+//				if(d4 == null) {
+//					System.out.println("존재하지 않는 회원입니다");
+//				}else {
+//					System.out.println("phone: "+d4.getPhone());
+//					System.out.print("새로운 전화번호 입력: ");
+//					phone = input.next();
+//					
+//					d4.setMember_id(id); d4.setPhone(phone);
+//					
+//					System.out.println("phone: "+d4.getPhone());
+//				}
 				break;
+				
 			case 3: 
-				System.out.print("아이디 입력: ");
-				id = input.next();
+//				System.out.print("아이디 입력: ");
+//				id = input.next();
+//				db.search_pwd(id);
+//
+//				
+//				MemberDTO d5 = db.search_pwd(id);
+//				
+//				if(d5 == null) {
+//					System.out.println("존재하지 않는 회원입니다");
+//				}else {
+//					System.out.println("nick: "+d5.getNick());
+//					System.out.print("새로운 닉네임 입력: ");
+//					nick = input.next();
+//					
+//					d5.setMember_id(id); d5.setNick(nick);
+//					
+//					System.out.println("nick: "+d5.getMember_pwd());
+//				}
 				break;
 			case 4:
 				break;

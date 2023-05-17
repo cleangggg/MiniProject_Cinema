@@ -154,24 +154,52 @@ public class MemberDB {
 		return result;
 	}
 	
-	public MemberDTO change(String id,String member) {
-		String sql = "select*from membership where member_id = '"+id+"'";
-		MemberDTO dto = null;
+	public int change_pwd(MemberDTO d) {
+		int result = 0;
+		String sql = "update membership set member_pwd = ? where member_id = ?";
 		try {
 			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				dto = new MemberDTO();
-				dto.setMember_id(rs.getString("member_id"));
-				dto.setMember_pwd(rs.getString("member_pwd"));
-				dto.setNick(rs.getString("nick"));
-				dto.setPhone(rs.getString("phone"));
-			}
+			ps.setString(2, d.getMember_id());
+			ps.setString(1, d.getMember_pwd());
+			
+			result = ps.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		
-		return dto;
+		return result;
 	}
+	
+//	public int change_phone(MemberDTO d) {
+//		int result = 0;
+//		String sql = "update membership set phone = ? where member_id = ?";
+//		try {
+//			ps = con.prepareStatement(sql);
+//			ps.setString(2, d.getMember_id());
+//			ps.setString(1, d.getPhone());
+//			
+//			result = ps.executeUpdate();
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//		
+//		return result;
+//	}
+//	
+//	public int change_nick(MemberDTO d) {
+//		int result = 0;
+//		String sql = "update membership set nick = ? where member_id = ?";
+//		try {
+//			ps = con.prepareStatement(sql);
+//			ps.setString(2, d.getMember_id());
+//			ps.setString(1, d.getNick());
+//			
+//			result = ps.executeUpdate();
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//		
+//		return result;
+//	}
 }
 
