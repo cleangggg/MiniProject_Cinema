@@ -1,0 +1,32 @@
+package Service;
+
+import java.util.Scanner;
+
+import location.location_service;
+
+public class main {
+
+	public static void main(String[] args) {
+		location_service ls = new location_service();
+		System.out.println("환영합니다.");
+		System.out.println("원하시는 메뉴를 선택하시오");
+		Scanner input = new Scanner(System.in);
+		int sel = input.nextInt();
+		switch (sel) {
+		case 1 :
+			System.out.println("로그인화면");
+			break;
+		case 2:
+			System.out.println("티켓 예약");
+			break;
+		case 3:
+			System.out.println("영화확인하기");
+			ls.select_cinema();
+			break;
+		
+		}
+		
+		
+	}
+	
+}

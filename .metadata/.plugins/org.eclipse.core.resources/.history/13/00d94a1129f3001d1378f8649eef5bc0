@@ -1,0 +1,33 @@
+package member;
+
+import java.util.Scanner;
+
+public class account_service {
+
+public void Sign_IN() { //회원가입
+	
+	Scanner input = new Scanner(System.in);
+	account_entity md = new account_entity();
+	System.out.println("아이디입력");
+	String id = input.next();
+	System.out.println("비번입력");
+	String pwd = input.next();
+	System.out.println("닉네임입력");
+	String nick = input.next();
+	md.setMember_id(id);md.setMember_pwd(pwd);md.setNick(nick);
+	
+	
+	
+}
+
+public void login() {//로그인
+	
+	
+}
+	
+public void modify() {//멤버수정 
+	
+	
+}
+
+}

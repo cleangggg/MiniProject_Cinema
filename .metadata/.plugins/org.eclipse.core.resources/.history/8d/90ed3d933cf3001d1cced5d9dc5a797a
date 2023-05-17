@@ -1,0 +1,66 @@
+package ticketing;
+
+	import java.sql.Connection;
+	import java.sql.PreparedStatement;
+	import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import DBConnection.DBConnection;
+
+	public class tk_service {
+
+		Connection con;
+		PreparedStatement ps;
+		ResultSet rs;
+		HashMap<String, ArrayList> map = new HashMap<>();
+		public tk_service() {
+
+			try {
+				con = DBConnection.getConnection();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		public ticketing_entity ticketing (String movie) {
+
+			String sql = "select MOVIE_NAME, MOVIE_TIME, MOVIE_SEATCOUNT from movie where movie_name = ?";
+			try {
+
+				ticketing_entity te = new ticketing_entity();
+				
+				ps = con.prepareStatement(sql);
+				ps.setString(1, movie);
+				rs = ps.executeQuery();
+//				while(rs.next()) {
+//				ArrayList arr = new ArrayList<>();
+//				
+//				te.setMovie_name(rs.getString(1));
+//				te.setMovie_time(rs.getString(2));
+//				te.setMovie_seater(rs.getInt(3));
+//				arr.add(te);
+//				map.put(movie, arr);
+//				System.out.println(map);
+//				}
+				
+				while (rs.next()) {
+					if (rs.getString(4).equals(name)){
+					ArrayList arr = new ArrayList<>();
+					arr.add(rs.getString(1));	
+					arr.add(rs.getString(2));	
+					arr.add(rs.getString(3));	
+					arr.add(rs.getString(4));	
+					map.put(name,arr);
+					System.out.println(map);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+	
+
+}

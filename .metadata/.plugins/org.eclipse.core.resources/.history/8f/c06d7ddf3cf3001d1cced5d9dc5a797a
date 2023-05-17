@@ -1,0 +1,32 @@
+package ticketing;
+
+import java.util.Scanner;
+
+public class ticketing {
+
+	public void ticketing() {
+		tk_service ts = new tk_service();
+		Scanner input = new Scanner(System.in);
+		System.out.println("영화예매하기");
+		System.out.println("영화이름 검색");
+		String movie = input.next();
+		
+		ticketing_entity te = ts.ticketing(movie);
+
+		
+		System.out.println(te);
+		
+		if(te.getMovie_seater()!=0) {
+			System.out.println("예매가능");
+			
+			
+			
+			
+		}else {
+			System.out.println("예매 불가능 ");
+		}
+		
+		
+	}
+	
+}

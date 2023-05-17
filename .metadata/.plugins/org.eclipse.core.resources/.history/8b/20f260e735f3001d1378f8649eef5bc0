@@ -1,0 +1,9 @@
+package ticketing;
+
+public class ticketing {
+
+	void ticketing() {
+		
+	}
+	
+}
