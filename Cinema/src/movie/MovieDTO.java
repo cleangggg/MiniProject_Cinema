@@ -38,4 +38,5 @@ public class MovieDTO {
 		
 		public String getMovie() { return movie; }
 		public void setMovie(String movie) { this.movie = movie; }
+		
 }
