@@ -19,4 +19,6 @@ public class DBConnection {
 	         con = DriverManager.getConnection(url, id, pwd);
 	         System.out.println("연결 성공");
 	         return con;
+
+	}
 }
