@@ -1,43 +1,10 @@
-package member;
+package Member;
 
 import java.sql.Date;
 
-public class account_entity{
-
-	private int num;
+public class MemberDTO {
 	private String member_id,member_pwd,nick,phone;
 	private Date birth;
-	
-	
-	public account_entity() {}
-	
-			
-	public account_entity(int num, String member_id, String member_pwd, String nick, String phone, Date birth) {
-		super();
-		this.num = num;
-		this.member_id = member_id;
-		this.member_pwd = member_pwd;
-		this.nick = nick;
-		this.phone = phone;
-		this.birth = birth;
-	}
-
-
-
-
-	@Override
-	public String toString() {
-		return "MemberDTO [num=" + num + ", member_id=" + member_id + ", member_pwd=" + member_pwd + ", nick=" + nick
-				+ ", phone=" + phone + ", birth=" + birth + "]";
-	}
-
-
-	public int getNum() {
-		return num;
-	}
-	public void setNum(int num) {
-		this.num = num;
-	}
 	public String getMember_id() {
 		return member_id;
 	}
@@ -67,7 +34,16 @@ public class account_entity{
 	}
 	public void setBirth(Date birth) {
 		this.birth = birth;
-	} 
+	}
 	
-
+	@Override
+	public String toString() {
+		return "회원 가입 완료";
+//				"MemberEntity [member_id=" + member_id + ", member_pwd=" + member_pwd + ", nick=" + nick + ", phone="
+//				+ phone + ", birth=" + birth + "]";
+	}
+	
+		
+	
+	
 }

@@ -24,7 +24,7 @@ public class location_service {
 			le.setCinema_location(loc);
 			if (loc.equals("서울")) {
 				System.out.println("원하시는 극장선택");// 종로 강남 , 야탑 의정부
-				System.out.println("1.종로,2.강남");
+				System.out.println("1.왕십리 , 2.강남");
 				thea = input.next();
 				lf.selectMovie_INFO(loc,thea);
 				
@@ -32,11 +32,12 @@ public class location_service {
 			}
 			if (loc.equals("경기도")) {
 				System.out.println("원하시는 극장선택");// 종로 강남 , 야탑 의정부
-				System.out.println("1.cgv야탑,2.cgv의정부");
-				thea = input.next();
-				
+				System.out.println("1.야탑,2.의정부");
+				thea = input.next();				
 				lf.selectMovie_INFO(loc,thea);
 			}
+			
+			
 			
 			break;
 		}

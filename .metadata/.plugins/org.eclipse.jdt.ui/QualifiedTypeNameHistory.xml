@@ -10,8 +10,14 @@
     <fullyQualifiedTypeName name="location.location_entity"/>
     <fullyQualifiedTypeName name="ticketing.ticketing"/>
     <fullyQualifiedTypeName name="ticketing.tk_service"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="ticketing.ticketing_entity"/>
+    <fullyQualifiedTypeName name="movie.Movie"/>
+    <fullyQualifiedTypeName name="Service.main"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="admin.adminDto"/>
+    <fullyQualifiedTypeName name="admin.admin_main"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
 </qualifiedTypeNameHistroy>
